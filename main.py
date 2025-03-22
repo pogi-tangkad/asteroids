@@ -51,7 +51,7 @@ def main():
                 return 100
             for bullet in bullets:
                 if asteroid.collision(bullet):
-                    asteroid.kill()
+                    asteroid.split()
                     bullet.kill()
         
         dt = clock.tick(60) / 1000
