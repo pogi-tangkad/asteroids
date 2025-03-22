@@ -36,12 +36,17 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return
+                return 0
         
         for item in drawable:
             item.draw(screen)
         
         updatable.update(dt)
+
+        for asteroid in asteroids:
+            if asteroid.collision(player):
+                print('Game over!')
+                return 100
         
         dt = clock.tick(60) / 1000
         
@@ -50,4 +55,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    print(main())
