@@ -2,6 +2,7 @@ import pygame
 from constants import *
 from player import *
 from asteroid import *
+from asteroidfield import *
 
 def main():
     print("Starting asteroids!")
@@ -25,8 +26,10 @@ def main():
 
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
+    AsteroidField.containers = (updatable)
 
     player = Player(x, y)
+    asteroidfield = AsteroidField()
 
     while(True):
         screen.fill("Black")
